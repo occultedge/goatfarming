@@ -13,9 +13,13 @@
     .features { list-style: none; padding-left: 0; }
     .features li::before { content: '✅ '; }
     .price-box { background: #fdf1e6; padding: 20px; border: 2px dashed #b53e3e; margin: 20px 0; text-align: center; }
+    .highlight { background: #fff0ec; padding: 15px; margin-top: 20px; border-left: 4px solid #a94438; }
     footer { background: #842c2c; color: white; text-align: center; padding: 10px; font-size: 14px; }
     a { color: #842c2c; font-weight: bold; }
-  </style>
+    .testimonial-track:hover {
+    animation-play-state: paused;
+  }
+</style>
 </head>
 <body>
 
@@ -35,11 +39,40 @@
       <li>Learn at Your Own Pace (21-Day Access)</li>
     </ul>
 
-    <div class="price-box">
+    <div id="floating-notifications" style="position: fixed; top: 20px; right: 20px; background: #fff0ec; color: #a94438; padding: 10px 15px; border: 1px solid #a94438; border-radius: 8px; font-size: 14px; box-shadow: 0 0 10px rgba(0,0,0,0.1); z-index: 9999; animation: flash 1.5s infinite alternate; display: none;">
+  <span id="notification-message">A learner just joined from Ghana!</span>
+</div>
+<script>
+  const messages = [
+    "Aisha from Ghana just joined the course!",
+    "Chinedu from Nigeria scored 10/10 on the final test!",
+    "Elvis from Cameroon completed all 7 modules!",
+    "Fatima from Abuja paid via MoMo and started learning!",
+    "Linda from Douala passed the exam with distinction!",
+    "Josephine from Accra just downloaded the eBook!",
+    "Emmanuel from Lagos just enrolled!"
+  ];
+  let index = 0;
+  const el = document.getElementById('floating-notifications');
+  const text = document.getElementById('notification-message');
+  setInterval(() => {
+    text.innerText = messages[index];
+    el.style.display = 'block';
+    index = (index + 1) % messages.length;
+  }, 6000);
+</script>
+<style>
+  @keyframes flash {
+    0% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+</style>
+
+
       <h2>One-Time Access: $14.49 USD</h2>
-      <p><strong>Also Payable as:</strong><br>
-      ₦5000 Naira / 8500 XAF<br>
-      <em>+ 5% transfer charges</em></p>
+<p><strong>Payable in:</strong> ₦18,000 Naira / 9500 XAF<br><em>Note: Add 5% extra for transfer fees if paying via local currency (Naira/XAF).</em></p>
+      
+      <p style="margin-top: 10px; background: #ffe0cc; padding: 10px; border: 1px dashed #d44a1f; border-radius: 6px;"><strong>🎁 Special Offer:</strong> Mention code <strong>GOAT2025</strong> during WhatsApp confirmation and get a free bonus checklist! <br><em>Offer valid until May 31, 2025.</em></p>
 
       <!-- Razorpay Button -->
       <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_QVDJ6DykFU6TvY/view" data-text="Pay Now" data-color="#528FF0" data-size="large">
@@ -51,10 +84,88 @@
             rzp && rzp.init && rzp.init()}})();
         </script>
       </div>
+
+      <p><strong>Prefer MoMo Payment?</strong><br>
+      Send payment to <strong>+233209691913</strong> via MTN Mobile Money or Orange Money.<br>
+      After payment, <a href="https://wa.me/233209691913?text=Hi%20I%20have%20paid%20via%20MoMo%20for%20the%20goat%20farming%20course.%20Please%20confirm%20my%20access.">click here to confirm on WhatsApp</a>.</p>
+    </div>
+
+    
+      <p>💡 <strong>How this course will benefit you:</strong><br>
+      - Learn how to raise healthy goats for meat, milk, and profit.<br>
+      - Avoid common farming mistakes with expert tips and tools.<br>
+      - Understand local feeding options, disease prevention, and breeding strategies.<br>
+      - Start your own goat business with minimal capital and maximum impact.<br>
+      - Get clear, step-by-step guidance — no prior experience needed.</p>
+      <p>🎧 Watch the videos at your own pace, download tools, and get expert answers via WhatsApp every week!</p>
     </div>
 
     <p>🎓 Start your farming journey today. Learn from anywhere, anytime.</p>
-    <p>📞 Questions? <a href="https://wa.me/YOURNUMBER">Message us on WhatsApp</a></p>
+    <p>📞 Questions? <a href="https://wa.me/233209691913?text=Hi%20I%20have%20queries%20for%20your%20goat%20farming%20course%20before%20payment.">Message us on WhatsApp</a></p>
+  <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="highlight">
+      <p><strong>Q: Is the course easy to understand?</strong><br>
+      A: Yes! All lessons are explained in simple language with practical examples. No farming background is needed.</p>
+
+      <p><strong>Q: Can I use my phone to access the course?</strong><br>
+      A: Yes, the entire course can be accessed on your smartphone. You can watch videos, download notes, and chat via WhatsApp.</p>
+
+      <p><strong>Q: How long do I have access to the course?</strong><br>
+      A: You have full access for 21 days from the date of enrollment.</p>
+
+       You will be required to pass a short exam held every month to qualify for the certificate.</p>
+
+      <p><strong>Q: What happens if I have questions during the course?</strong><br>
+      A: You can message us on WhatsApp any time. We answer weekly with expert help.</p>
+    </div>
+
+  <h2>What Our Learners Say</h2>
+<div class="slider-container" style="max-width: 800px; margin: 0 auto; position: relative;">
+  <div class="slider" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 20px;">
+    <div class="testimonial-card" style="scroll-snap-align: center;">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width: 60px; height: 60px; border-radius: 50%;"><br>
+      <strong>Bisheline Naya (Cameroon)</strong><br>
+      “Very practical and easy to follow. I’ve started my own goat pen at home!”
+    </div>
+    <div class="testimonial-card" style="scroll-snap-align: center;">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width: 60px; height: 60px; border-radius: 50%;"><br>
+      <strong>Stephen O. (Nigeria)</strong><br>
+      “Packed with real knowledge. I liked the feeding and health modules.”
+    </div>
+    <div class="testimonial-card" style="scroll-snap-align: center;">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" style="width: 60px; height: 60px; border-radius: 50%;"><br>
+      <strong>Grace K. (Ghana)</strong><br>
+      “This course gave me the confidence to start a small goat business.”
+    </div>
+    <div class="testimonial-card" style="scroll-snap-align: center;">
+      <img src="https://randomuser.me/api/portraits/men/15.jpg" style="width: 60px; height: 60px; border-radius: 50%;"><br>
+      <strong>Daniel A. (Nigeria)</strong><br>
+      “After this course, I started with just two goats. Now I’ve expanded to 10 within 3 months!”
+    </div>
+    <div class="testimonial-card" style="scroll-snap-align: center;">
+      <img src="https://randomuser.me/api/portraits/women/19.jpg" style="width: 60px; height: 60px; border-radius: 50%;"><br>
+      <strong>Yvette M. (Cameroon)</strong><br>
+      “I had zero knowledge before. This training gave me confidence and clarity!”
+    </div>
+    <div class="testimonial-card" style="scroll-snap-align: center;">
+      <iframe width="250" height="140" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Testimonial" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe><br>
+      <strong>Live Testimonial</strong><br>
+      “Watch how a learner explains their goat farming success!”
+    </div>
+  </div>
+</div>
+<style>
+  .testimonial-card {
+    flex: 0 0 auto;
+    width: 280px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+</style>
+
   </section>
 
   <footer>
